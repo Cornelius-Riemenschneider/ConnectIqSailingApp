@@ -194,6 +194,14 @@ class SailingAppDelegateGeneric extends Ui.BehaviorDelegate {
         return currentView.onEscKey();
     }
 
+    function onKey(evt) {
+		if( evt.getKey() == Ui.KEY_ENTER) {
+			System.println("KEY_ENTER");
+	        return currentView.onEnterKey();
+		}
+		return false;
+	}
+
     // down button
     function onNextPage() 
     {
