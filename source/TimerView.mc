@@ -38,7 +38,7 @@ class TimerView extends CommonView {
     // in start sequence.
     var timerZero;
     // how long should the timer be set to when the timer is reset?
-    var timerDuration = 300;
+    var timerDuration = 360;
     // one quarter of the screen in pixels 
     var quarterWidth;
     // the font that we use when drawing buttons
@@ -444,11 +444,11 @@ class TimerView extends CommonView {
                     if (minute == 0) {
                         // go!
                         vibrateData = [
-                            new Attention.VibeProfile(50, 100),
-                            new Attention.VibeProfile(0, 100),
-                            new Attention.VibeProfile(100, 100),
-                            new Attention.VibeProfile(0, 100),
-                            new Attention.VibeProfile(100, 100)
+                            new Attention.VibeProfile(50, 200),
+                            new Attention.VibeProfile(0, 200),
+                            new Attention.VibeProfile(100, 200),
+                            new Attention.VibeProfile(0, 200),
+                            new Attention.VibeProfile(100, 200)
                         ];
 
                         // we add a lap for when the race actually started
@@ -457,17 +457,17 @@ class TimerView extends CommonView {
                             $.session.start();
                         }
                         $.session.addLap();
-                    } else if (minute == ((timerDuration / 60) - 1) || minute == 1) {
+                    } else if (minute == 4) {
                         // flag change
                         vibrateData = [
-                            new Attention.VibeProfile(100, 100),
-                            new Attention.VibeProfile(0, 100),
-                            new Attention.VibeProfile(100, 100)
+                            new Attention.VibeProfile(100, 200),
+                            new Attention.VibeProfile(0, 200),
+                            new Attention.VibeProfile(100, 200)
                         ];
                     } else {
                         // normal minute
                         vibrateData = [
-                            new Attention.VibeProfile(100, 100)
+                            new Attention.VibeProfile(100, 200)
                         ];
                     }
 
